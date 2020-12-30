@@ -1,0 +1,50 @@
+
+
+<div class="row mb-2" *ngIf="articles.length > 0 ">
+  
+      <app-article (change)="articleChange($event)" text="hi" class="col-md-6 " *ngFor= "let article of articles" [article]= "article" > </app-article>   
+  </div>
+  <!--<input type="text"class="form-control" [(ngModel)]="name">-->
+  <!--[value]="name"(keyup)="change($event)"-->
+  <!--<button class="btn btn-primary"(click)="save(name)">save</button>
+  <hr>
+  {{course.title | summary}} <br>
+  {{course.rating | number}}<br>
+  {{course.students}}<br>
+  {{course.prise | currency}}<br>
+  {{course.releaseDate | date :'shortDate'}}<br>
+  > -->
+  <div class="row mb-2" *ngIf="articles.length <= 0">
+      <p style="font-size:40px; padding:50px">no article added yet</p>
+
+  </div>
+  <app-modal>
+      <ng-container class="title">My modal title</ng-container>
+      <ng-container class="content">my model content</ng-container>
+  </app-modal>
+
+
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link" [ngClass]= "{'active':view=='tab1', 'notactive' : view !='tab1'}" (click)="view ='tab1'" >Tab1</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [class.active]="view=='tab2'" (click)="view ='tab2'">tab2</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [class.active]="view=='tab3'" (click)="view ='tab3'">tab3</a>
+    </li>
+ </ul>
+   <div [ngSwitch]="view"> 
+       <div *ngSwitchCase="'tab1'">tab1 content</div>
+       <div *ngSwitchCase="'tab2'"> tab2 content</div>
+       <div *ngSwitchCase="'tab3'">tab3 content</div>
+   </div>
+
+<div
+ [ngStyle]="{
+     'backgroundColor': isred? 'red' : 'white' ,
+     'color' : isred? 'white' : 'black'
+ }">
+qsedrftgyhujikolpmolpkijuhygtfrdeszedrftgyhujiokplolkjuhiygtfredzsedrftyghu
+</div>

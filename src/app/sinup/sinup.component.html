@@ -1,0 +1,35 @@
+<form [formGroup]="form"> 
+  <div class="form-group">
+    <label> name</label>
+    <Input ngDefaultControl formControlName="name" type="text"class ="form-control">
+     <div class="alert alert-danger" *ngIf="name.touched && !name.valid">
+       <span>Name is required</span>
+     </div>
+  </div>
+<div class="form-group">
+    <label> username</label>
+    <Input  ngDefaultControl formControlName="username" type="text"class ="form-control">
+     <div class="alert alert-danger" *ngIf="username.touched && !username.valid">
+       <span *ngIf='username.errors.required'>user Name is required</span>
+       <span *ngIf='username.errors.cannotcontainSpace'>userName can not contain Space</span>
+     </div>
+  </div>
+  <div class="form-group">
+      <label> Email</label>
+        <Input ngDefaultControl formControlName="email" type="text"class ="form-control">
+        <div class="alert alert-danger" *ngIf="Email.touched && !Email.valid">
+          <span *ngIf="Email.errors.required">Email is required</span>
+          <span *ngIf="Email.errors.email">email non valide</span>
+          <span *ngIf="Email.errors.shouldBeUnique"> email should be unique</span>
+        </div>
+  </div>
+  <div class="form-group">
+      <label> Password</label>
+      <Input ngDefaultControl formControlName="password"type="password"class ="form-control">
+        <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
+          <span>  password is required</span>
+        </div>
+  </div>
+    <br>
+    <button class="btn btn-primary" >Sing up</button>
+</form>
